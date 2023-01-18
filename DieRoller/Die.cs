@@ -14,7 +14,7 @@ namespace DieRoller
         /// <summary>
         /// The current face up value of the die
         /// </summary>
-        public int FaceValue { get; set; }
+        public byte FaceValue { get; set; }
 
         /// <summary>
         /// True if the die is currently held
@@ -27,10 +27,14 @@ namespace DieRoller
         /// <returns>Returns the new random number</returns>
         public byte Roll()
         {
-            // generate random number 
-            // set to face value
-            // return new number
-            throw new NotImplementedException();
+            // generate random number
+            Random random = new Random();
+            byte newValue = (byte)random.Next(1, 7);
+
+            byte FaceValue = newValue;
+
+            return FaceValue;
+
         }
     }
 }
